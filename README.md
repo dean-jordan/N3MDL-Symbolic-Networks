@@ -101,28 +101,72 @@ The encoder directory produces a neural network module which separates input int
 > Creates encoder module through attention mechanism (`encoder_attention.py`) and encoder blocks (`encoder_block.py`).
 
 #### Decoder
+The decoder takes the input of the neural subnetwork ensemble and translates the low-level features back into a full output. The directory defines the code for a decoder block and a decoder module.
+
+`decoder_block.py`
+> Defines a single decoder block. This can then be used to create a full decoder mechanism.
+
+`decoder.py`
+> Allows for decoder to be defined by combining decoder blocks and organizing them to produce final output.
 
 #### Layers
+The layers directory defines many custom layers used throughout the project. Each layer is named with the part of the network it corresponds to and its number defines where in a block the layer is placed.
+
+`integration.py`
+> Defines an integration layer for Neurosymbolic architecture.
 
 #### Loss
+Due to the novelty of the neural network architecture, a custom loss function is utilized. This directory defines the function and creates plotting for the function in order to test its capability.
+
+`loss.py`
+> Defines the custom loss function.
 
 #### Network
+Defines the subnetwork ensemble that occurs between the encoder and the decoder. This processes the low-level inputs and each subnetwork is assigned to an adapter, allowing for specialization and generalization to be balanced.
+
+`subnetwork.py`
+> Initializes a single subnetwork in the overall ensemble.
+
+`network.py`
+> Initializes the full subnetwork ensemble by combining subnetworks in a specific organization.
 
 #### Symbolic
+Because the architecture takes advantage of Neurosymbolic programming in order to allow for logical tasks, the Symbolic directory allows for the Symbolic principles to be realized.
+
+`symbolic_reasoning_engine.py`
+> Creates a framework for the network to deduce proofs and generate knowledge.
+
+`symbolic.py`
+> Creates a symbolic module through combining all parts of the symbolic system together.
 
 ### Models
+The models directory contains the fully-trained model in multiple formats. PyTorch state dictionaries can be used, but [ONNX](https://onnx.ai) is the preferred method of accessing the serialized model.
+
+`N3MDL_model.py`
+> Contains a script for accessing and communicating with the ONNX-serialized model.
 
 ### Docs
+Contains documentation detailing user and developer workflows. For more information, see the `./docs` directory.
 
 ### Notebooks
+Contains notebooks detailing how the model was developed. Each notebook is numbered in order to define a simple workflow. Note: if a commit is being made to the code, it is expected that the notebooks are updated accordingly.
 
 ### Reports
+Contains the final report. This is written in the TeX format, but a finalized PDF-based copy is contained within the `./reports` directory.
 
 ### References
+Contains all references which are cited in the report. This is contained in the BibTeX format.
 
 ### Training
+Training occurs through a custom training algorithm defined in the train.py directory. Please refer to the `./training` directory for the scripts and code used to train the model.
+Note that this directory does not contain the full dataset as described in the paper. However, the dataset is open-access.
 
 ### Dependencies
+- Python 3.11.5
+    - torch
+    - matplotlib
+    - numpy
+    - onnxruntime
 
 ### Directory Structure
 

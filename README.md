@@ -60,14 +60,45 @@ The N3MDL software package was developed on Linux Ubuntu with Python v3.11.5 and
 Any Python 3.x version is compatible. However, newer versions of Python are recommended for compatibility.
 
 ### N3MDL Source
+The N3MDL network definition is divided into nine categories. However, for quick access, the `./models/N3MDL_model.py` file contains a script allowing for access of the full model to run locally.
+
+All other files were used for the creation, training, and evaluation of the model. All directories and key files will be described below.
 
 #### Activation
+The activation directory contains all activation functions which will be used to intiialize every part of the network. This directory contains existing and custom activation functions.
+
+`custom.py`
+> Contains custom activation functions for initialization of smaller network modules.
 
 #### Adapters
+The adapters directory contains files for the creation and access of adapters. This allows for the model to be specialized on-the-fly and perform complex multi-domain operations without requiring excessive RAM.
+
+`adapter_creation.py`
+> Contains code for the creation of adapters within the training process.
+
+`adapter_loading.py`
+> Contains code to dynamically load adapters upon the usage of the model.
+
+`dynamic_adapter_creation.py`
+> Contains code for continual learning. Allows for adapters to be created as the model is being used for increased specialization and personalization.
 
 #### Attention
+The attention directory contains modules for the development of a novel attention mechanism for N3MDL. This has a variety of advantages discussed in the publication.
+
+`attention.py`
+> Creates attention mechanism through `query.py`, `value.py`, and `weight.py`.
+
+`mask.py`
+> Creates masking in the attention mechanism to prevent decoder collapse during training.
 
 #### Encoder
+The encoder directory produces a neural network module which separates input into several outputs. The module itself produces low-level features in order for further processing by the middle subnetwork ensemble.
+
+`input_embedding.py`
+> Uses attention mechanism to tokenize inputs.
+
+`encoder.py`
+> Creates encoder module through attention mechanism (`encoder_attention.py`) and encoder blocks (`encoder_block.py`).
 
 #### Decoder
 

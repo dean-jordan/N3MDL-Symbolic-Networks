@@ -1,6 +1,7 @@
 <p align="center">
 
 [![LICENSE](https://img.shields.io/badge/license-MIT-brightgreen)](https://github.com/dean-jordan/N3MDL-Symbolic-Networks/blob/main/LICENSE)
+![GitHub last commit](https://img.shields.io/github/last-commit/dean-jordan/N3MDL-Symbolic-Networks)
 
 </p>
 
@@ -34,6 +35,29 @@ N3MDL aims to improve Deep Learning performance for Multi-Domain tasks through a
 ### About
 
 ### Quickstart
+Quickstart for cloning repository and either running an instance of the model or making a commit to the repository.
+
+```bash
+# Clone Repository
+git clone https://github.com/dean-jordan/N3MDL-Symbolic-Networks.git
+
+# Prerequisite Installation
+pip3 install -r requirements.txt
+```
+
+For modifying source, please utilize the N3MDL directory.
+
+For running model and making predictions:
+
+```bash
+# Running Final Model
+python3 ./models/N3MDL_model.py
+```
+
+Ensure that all commands are running from the root directory (`N3MDL-Symbolic-Networks`) in order to utilize relative pathing in model commands.
+
+The N3MDL software package was developed on Linux Ubuntu with Python v3.11.5 and Amazon Linux 2023 with Python v3.11.5.
+Any Python 3.x version is compatible. However, newer versions of Python are recommended for compatibility.
 
 ### N3MDL Source
 

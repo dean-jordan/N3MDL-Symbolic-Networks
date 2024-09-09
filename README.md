@@ -1,26 +1,89 @@
-# N3MDL-Symbolic-Networks
+<p align="center">
 
-<a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
-    <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
-</a>
+[![LICENSE](https://img.shields.io/badge/license-MIT-brightgreen)](https://github.com/dean-jordan/N3MDL-Symbolic-Networks/blob/main/LICENSE)
 
-N3MDL: Multi-Domain Learning with Symbolic Neural Network Ensembles
+</p>
 
-## Project Organization
+<h3 align="center"> N3MDL: Efficient Multi-Domain Learning with Neurosymbolic Neural Network Ensembles <h3>
+
+N3MDL aims to improve Deep Learning performance for Multi-Domain tasks through a novel Neural Network architecture resembling the human brain more closely.
+
+---
+- [About](#about)
+- [Quickstart](#quickstart)
+- [N3MDL Source](#n3mdl-source)
+    - [Activation](#activation)
+    - [Adapters](#adapters)
+    - [Attention](#attention)
+    - [Encoder](#encoder)
+    - [Decoder](#decoder)
+    - [Layers](#layers)
+    - [Loss](#loss)
+    - [Network](#network)
+    - [Symbolic](#symbolic)
+- [Models](#models)
+- [Docs](#docs)
+- [Notebooks](#notebooks)
+- [Reports](#reports)
+- [References](#references)
+- [Training](#training)
+- [Dependencies](#dependencies)
+- [Directory Structure](#directory-structure)
+---
+
+### About
+
+### Quickstart
+
+### N3MDL Source
+
+#### Activation
+
+#### Adapters
+
+#### Attention
+
+#### Encoder
+
+#### Decoder
+
+#### Layers
+
+#### Loss
+
+#### Network
+
+#### Symbolic
+
+### Models
+
+### Docs
+
+### Notebooks
+
+### Reports
+
+### References
+
+### Training
+
+### Dependencies
+
+### Directory Structure
 
 ```
-├── LICENSE            <- Open-source license if one is chosen
-├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
-├── README.md          <- The top-level README for developers using this project.
+├── LICENSE            <- MIT Open-source license
+├── Makefile           <- Makefile allowing for commands such as `make data` and `make train`
+├── README.md          <- The top-level README for an overview of N3MDL
 ├── data
-│   ├── external       <- Data from third party sources.
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
+│   ├── external       <- Data from third party sources
+│   ├── interim        <- Intermediate data that has been transformed
+│   ├── processed      <- The final, canonical data sets for modeling
+│   └── raw            <- The original, immutable data dump
 │
-├── docs               <- A default mkdocs project; see www.mkdocs.org for details
+├── docs               <- A mkdocs-based documentation system detailing usage of the project
 │
-├── models             <- Trained and serialized models, model predictions, or model summaries
+├── models             <- Fully trained and serialized models, including ONNX and PyTorch checkpoints
 │
 ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
 │                         the creator's initials, and a short `-` delimited description, e.g.

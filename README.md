@@ -1,4 +1,8 @@
 <p align="center">
+  <img src="/assets/n3mdl_preliminary_logo.png">
+</p>
+
+<p align="center">
 
 [![LICENSE](https://img.shields.io/badge/license-MIT-brightgreen)](https://github.com/dean-jordan/N3MDL-Symbolic-Networks/blob/main/LICENSE)
 ![GitHub last commit](https://img.shields.io/github/last-commit/dean-jordan/N3MDL-Symbolic-Networks)

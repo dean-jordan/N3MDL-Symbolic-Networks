@@ -1,8 +1,9 @@
 import torch
 import torch.nn as nn
-import torch.optim as optim
-import torch.utils.data as data
-import math
-import copy
-import numpy as np
-import matplotlib.pyplot as plt
+
+class Softmax(nn.Module):
+    def __init__(self):
+        super(Softmax, self).__init__()
+
+    def forward(self, x):
+        return torch.exp(x) / sum(torch.exp(x))

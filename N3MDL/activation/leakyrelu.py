@@ -1,8 +1,12 @@
 import torch
 import torch.nn as nn
-import torch.optim as optim
-import torch.utils.data as data
-import math
-import copy
-import numpy as np
-import matplotlib.pyplot as plt
+
+class LeakyReLU(nn.Module):
+    def __init__(self):
+        super(LeakyReLU, self).__init__()
+
+    def foward(self, x, negative_slope):
+        if x > 0:
+            return x
+        else:
+            return x * negative_slope

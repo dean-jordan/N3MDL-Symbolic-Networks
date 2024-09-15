@@ -1,8 +1,10 @@
 import torch
 import torch.nn as nn
-import torch.optim as optim
-import torch.utils.data as data
-import math
-import copy
-import numpy as np
-import matplotlib.pyplot as plt
+
+class ReLU(nn.Module):
+    def __init__(self):
+        super(ReLU).__init__()
+
+    def forward(self):
+        x = torch.maximum(x, 0.0)
+        return x

@@ -7,6 +7,8 @@ class AttentionMechanism(nn.Module):
     def __init__(self, model_dimensionality, num_heads):
         super(self, AttentionMechanism).__init__()
 
+        assert model_dimensionality % num_heads == 0
+
         self.model_dimensionality = model_dimensionality
         self.num_heads = num_heads
         self.d_k = model_dimensionality // num_heads

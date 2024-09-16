@@ -2,9 +2,9 @@ import torch
 import torch.nn as nn
 import math
 
-class PositionalEncodingModule(nn.Module):
+class AttentionPositionalEncodingModule(nn.Module):
     def __init__(self, model_dimensionality, max_sequence_length):
-        super(PositionalEncodingModule, self).__init__()
+        super(AttentionPositionalEncodingModule, self).__init__()
 
         encoding_tensors = torch.zeros(max_sequence_length, model_dimensionality)
         positional_tensors = torch.arange(0, max_sequence_length, dtype=torch.float).unsqueeze(1)

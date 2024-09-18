@@ -1,9 +1,9 @@
 import torch.nn as nn
 from attention import attention
 
-class EncoderAttention(nn.Module):
+class EncoderAttentionModule(nn.Module):
     def __init__(self, model_dimensionality, num_heads, dropout):
-        super(self, EncoderAttention).__init__()
+        super(self, EncoderAttentionModule).__init__()
 
         self.attention = attention.AttentionMechanism(model_dimensionality, num_heads)
         self.normalization = nn.LayerNorm(model_dimensionality)

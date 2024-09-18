@@ -3,14 +3,19 @@ from activation import relu
 from layers import encoder_recurrent
 
 class EncoderFeedForwardNetwork(nn.Module):
-    def __init__(self):
+    def __init__(self, model_dimensionality: int, hidden_dimensionality: int, feedforward_dimensionality: int):
         super(EncoderFeedForwardNetwork, self).__init__()
 
-        self.recurrent1 = encoder_recurrent.EncoderRecurrentLayer(input_size=2, hidden_size=3, output_size=2)
-        self.recurrent2 = encoder_recurrent.EncoderRecurrentLayer(input_size=2, hidden_size=3, output_size=2)
-        self.recurrent3 = encoder_recurrent.EncoderRecurrentLayer(input_size=2, hidden_size=3, output_size=2)
-        self.recurrent4 = encoder_recurrent.EncoderRecurrentLayer(input_size=2, hidden_size=3, output_size=2)
-        self.recurrent5 = encoder_recurrent.EncoderRecurrentLayer(input_size=2, hidden_size=3, output_size=2)
+        self.recurrent1 = encoder_recurrent.EncoderRecurrentLayer(input_size=model_dimensionality, hidden_size=hidden_dimensionality,
+                                                                  output_size=feedforward_dimensionality)
+        self.recurrent2 = encoder_recurrent.EncoderRecurrentLayer(input_size=model_dimensionality, hidden_size=hidden_dimensionality,
+                                                                  output_size=feedforward_dimensionality)
+        self.recurrent3 = encoder_recurrent.EncoderRecurrentLayer(input_size=model_dimensionality, hidden_size=hidden_dimensionality,
+                                                                  output_size=feedforward_dimensionality)
+        self.recurrent4 = encoder_recurrent.EncoderRecurrentLayer(input_size=model_dimensionality, hidden_size=hidden_dimensionality,
+                                                                  output_size=feedforward_dimensionality)
+        self.recurrent5 = encoder_recurrent.EncoderRecurrentLayer(input_size=model_dimensionality, hidden_size=hidden_dimensionality,
+                                                                  output_size=feedforward_dimensionality)
         self.activation = relu.ReLU()
 
     def forward(self, x):

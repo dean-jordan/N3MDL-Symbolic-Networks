@@ -6,3 +6,7 @@ import math
 import copy
 import numpy as np
 import matplotlib.pyplot as plt
+
+class SubnetworkModule(nn.Module):
+    def __init__(self):
+        super(SubnetworkModule, self).__init__()

@@ -2,7 +2,7 @@ import torch.nn as nn
 from attention import attention
 
 class EncoderAttentionModule(nn.Module):
-    def __init__(self, model_dimensionality, num_heads, dropout):
+    def __init__(self, model_dimensionality: int, num_heads: int, dropout):
         super(self, EncoderAttentionModule).__init__()
 
         self.attention = attention.AttentionMechanism(model_dimensionality, num_heads)

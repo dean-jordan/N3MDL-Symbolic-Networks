@@ -13,7 +13,7 @@ class DecoderEnsemble(nn.Module):
     def __init__(self):
         super(DecoderEnsemble, self).__init__()
 
-        decoder_block = DecoderBlock(model_dimensionality=8192, num_heads=16, feedforward_dimensionality=8192,
+        self.decoder_block = DecoderBlock(model_dimensionality=8192, num_heads=16, feedforward_dimensionality=8192,
                                       dropout=0.1, hidden_dimensionality=8192)
         
     def create_decoder_ensemble(self, num_decoders, num_layers, model_dimensionality, dropout, target_vocab_size):
@@ -25,8 +25,7 @@ class DecoderEnsemble(nn.Module):
         self.decoder_embedding = nn.Embedding(target_vocab_size, model_dimensionality)
 
         for _ in range(num_layers):
-            self.decoder_layers = nn.ModuleList([DecoderBlock(model_dimensionality=8192, num_heads=16, feedforward_dimensionality=8192,
-                                      dropout=0.1, hidden_dimensionality=8192)])
+            self.decoder_layers = nn.ModuleList([self.decoder_block])
             
         for _ in range(num_decoders):
             self.decoder_number = nn.ModuleList([self.decoder_layers()])
